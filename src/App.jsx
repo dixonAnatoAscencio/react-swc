@@ -27,7 +27,7 @@ export function App() {
           Dixon Jesus Anato Ascencio
         </TwitterFollowCard>
 
-        <TwitterFollowCard isFollowing userName="bibi">
+        <TwitterFollowCard userName="bibi">
           {/*formatUserName={formattedUserName}*/}
           Dixon Jesus
         </TwitterFollowCard>
