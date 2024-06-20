@@ -18,19 +18,41 @@ export function App() {
   //puede hacer que sea mas complejo entender que informacion le llega al componente
   //Mejor ser declarativo y psar lo que se va a usar
 
+  const users = [
+    {
+      userName: "dog",
+      name: "Dixon Jesus",
+      isFollowing: true,
+    },
+    {
+      userName: "ventry",
+      name: "Dixon Jesus",
+      isFollowing: true,
+    },
+    {
+      userName: "bibi",
+      name: "Bibix",
+      isFollowing: true,
+    },
+    {
+      userName: "TMChein",
+      name: "Tomas",
+      isFollowing: false,
+    },
+  ];
+
   return (
     <>
       <section className="App">
-        <TwitterFollowCard {...dixon}>
-          {/*formatUserName={formattedUserName}*/}
-          {/*Solo existen un children pero puede envolver multiples elementos, no existen childrens nombrados */}
-          Dixon Jesus Anato Ascencio
-        </TwitterFollowCard>
-
-        <TwitterFollowCard userName="bibi">
-          {/*formatUserName={formattedUserName}*/}
-          Dixon Jesus
-        </TwitterFollowCard>
+        {users.map(({ userName, name, isFollowing }) => (
+          <TwitterFollowCard
+            key={userName} //identificar los elementos del array con una key unica, si el elemento va a tener el mismo indice siempre puedes usar el index
+            userName={userName}
+            initialIsFollowing={isFollowing}
+          >
+            {name}
+          </TwitterFollowCard>
+        ))}
       </section>
     </>
   );
